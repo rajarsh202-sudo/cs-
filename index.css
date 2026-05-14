@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-primary: #b0004a;
+  --color-brand-secondary: #4355b9;
+  --color-brand-tertiary: #6129e4;
+  
+  --radius-sm: 0.25rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  --shadow-ambient: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 6px 30px rgba(67, 85, 185, 0.08);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#f8f9fa] text-[#191c1d] font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card-shadow {
+    box-shadow: var(--shadow-ambient);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
